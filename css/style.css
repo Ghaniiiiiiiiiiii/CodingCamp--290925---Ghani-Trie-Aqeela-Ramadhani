@@ -62,7 +62,7 @@ button:hover {
 table {
   width: 100%;
   border-collapse: collapse;
-  border-radius: 12px;
+  border-radius: 10px;
   overflow: hidden;
   font-size: 12px;
 }

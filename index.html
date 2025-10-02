@@ -93,33 +93,36 @@
 </div>
 
 <div class="w-full flex flex-col md:flex-row gap-4 mt-6">
-  <div class="relative flex-1">
-    <span class="absolute inset-y-0 left-0 flex items-center  text-gray-400">        
-        <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-            <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
-            </svg>
-        </div>
-    </span>
-    <input id="searchInput"type="search" placeholder="Cari Kegiatan"
-    class="text-center w-full p-3 pl-10 text-gray-700 text-sm border rounded-lg bg-gray-50 focus:ring-2 focus:ring-blue-400"/>
-  </div>
+  <label class="input input-bordered flex items-center gap-2 flex-1">
+    <svg class="w-4 h-4 text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20"> 
+      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/> 
+    </svg>    
+    <input id="searchInput" type="search" placeholder="Cari Kegiatan" class="grow text-gray-700" />
+  </label>
 
-  <select id="selectFilter"class="flex p-3 text-gray-700 text-sm border rounded-lg bg-gray-50 focus:ring-2 focus:ring-blue-400">
+  <select id="selectFilter" class="flex-1 flex text-gray-700 select select-bordered w-full md:w-auto">
     <option>All</option>
     <option>Pending</option>
     <option>Done</option>
   </select>
 
-  <button
-    id="delete"class="flex-1 md:flex-none md:w-1/4 bg-red-500 text-white font-semibold py-3 px-4 rounded-lg hover:bg-red-600 flex items-center justify-center gap-2">
-     Delete All
+  <select id="sortBy" placehorder="Sort"class="flex-1 text-gray-700 select select-bordered w-full md:w-auto">
+    <option value="asc">Sort A-Z</option>
+    <option value="desc">Sort Z-A</option>
+    <option value="dateAsc">Tanggal Terbaru</option>
+    <option value="dateDesc">Tanggal Terlama</option>
+  </select>
+
+  <button id="delete" class="text-neutral-100 btn btn-error w-full md:w-auto">
+    Delete All
   </button>
 </div>
 
+
 <div class="justify-center text-center mt-4">
-    <table class="bg-neutral-200 table text-gray-900">
-        <thead>
+  <div class="max-h-96 overflow-y-auto"> 
+    <table class="bg-neutral-100 table text-gray-900 w-full">
+        <thead class="sticky top-0 bg-neutral-100">
             <tr class="text-gray-900 text-center">
                 <th>Kegiatan</th>
                 <th>Tanggal</th>
